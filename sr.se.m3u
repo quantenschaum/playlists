@@ -1,20 +1,19 @@
 #EXTM3U
-#EXTINF:-1 tvg-name="SR P1" tvg-id="p1.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P1garant_srgb.png",SR P1
+#EXTINF:-1 tvg-name="SR P1" tvg-id="p1.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p1.sr.se.png",SR P1
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/p1-mp3-192 -c copy -metadata service_name="SR P1" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR P2" tvg-id="p2.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P2garant_srgb.png",SR P2
+#EXTINF:-1 tvg-name="SR P2" tvg-id="p2.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p2.sr.se.png",SR P2
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/p2-mp3-192 -c copy -metadata service_name="SR P2" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR P2 Musik" tvg-id="p2musik.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P2garant_srgb.png",SR P2 Musik
+#EXTINF:-1 tvg-name="SR P2 Musik" tvg-id="p2musik.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p2.sr.se.png",SR P2 Musik
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/p2musik-mp3-192 -c copy -metadata service_name="SR P2 Musik" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR P3" tvg-id="p3.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P3garant_srgb.png",SR P3
+#EXTINF:-1 tvg-name="SR P3" tvg-id="p3.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p3.sr.se.png",SR P3
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/p3-mp3-192 -c copy -metadata service_name="SR P3" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR P4 Stockholm" tvg-id="p4sth.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P4stockholm_stand_srgb.png",SR P4 Stockholm
+#EXTINF:-1 tvg-name="SR P4 Stockholm" tvg-id="p4sth.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p4stockholm.sr.se.png",SR P4 Stockholm
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/p4stockholm-mp3-192 -c copy -metadata service_name="SR P4 Stockholm" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR P5 Stockholm" tvg-id="p5sthlm.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P5garant_sthlm_srgb.png",SR P5 Stockholm
+#EXTINF:-1 tvg-name="SR P5 Stockholm" tvg-id="p5sthlm.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p5.sr.se.png",SR P5 Stockholm
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/p5sthlm-mp3-192 -c copy -metadata service_name="SR P5 Stockholm" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR International" tvg-id="srinternational.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/RadioSweden_srgb.png",SR International
+#EXTINF:-1 tvg-name="SR International" tvg-id="srinternational.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/radiosweden.sr.se.png",SR International
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/srinternational-mp3-192 -c copy -metadata service_name="SR International" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR Klassiskt" tvg-id="srklassiskt.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P2garant_srgb.png",SR Klassiskt
+#EXTINF:-1 tvg-name="SR Klassiskt" tvg-id="srklassiskt.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p2.sr.se.png",SR Klassiskt
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/srklassiskt-mp3-192 -c copy -metadata service_name="SR Klassiskt" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-#EXTINF:-1 tvg-name="SR Världen" tvg-id="srvarlden.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/P2garant_srgb.png",SR Världen
+#EXTINF:-1 tvg-name="SR Världen" tvg-id="srvarlden.sr.se" group-title="Radio-SE" radio="true" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/p2.sr.se.png",SR Världen
 pipe:///usr/bin/ffmpeg -loglevel fatal -i http://http-live.sr.se/srvarlden-mp3-192 -c copy -metadata service_name="SR Världen" -metadata service_provider=Radio-SE -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1
-
