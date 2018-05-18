@@ -1,19 +1,18 @@
-all: x.m3u
+all: sr.se.m3u sr.se.pipe.m3u
 
 define SCRIPT
 import sys, requests
 from re import sub
-print(sys.argv)
+#print(sys.argv)
 
 filename=sys.argv[1]
+dopipe=len(sys.argv)>2 and sys.argv[2] == 'pipe'
 prefix='SR '
-
 id=lambda d: sub(r'.*/(\w+)-.*', r'\1.sr.se', d['url'])
-logo=lambda d: d['id']+'.png'
+logo=lambda d: 'https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/{id}.png'.format(**d)
 group=lambda d: 'Radio-SE'
-pipe=lambda d: 'pipe:///usr/bin/ffmpeg -loglevel fatal -i "{url}" -c copy -metadata service_name="{name}" -metadata service_provider="{group}" -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1'
-
-template='#EXTINF:-1 tvg-id="{id}" tvg-name="{name}" tvg-logo="https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/{logo}" group-title="{group}" radio="true",{name}\n{url}'
+pipe=lambda d: 'pipe:///usr/bin/ffmpeg -loglevel fatal -i "{url}" -c copy -metadata service_name="{name}" -metadata service_provider="{group}" -mpegts_service_type advanced_codec_digital_radio -f mpegts pipe:1'.format(**d)
+template='#EXTINF:-1 tvg-id="{id}" tvg-name="{name}" tvg-logo="{logo}" group-title="{group}" radio="true",{name}\n{url}'
 
 def read_m3u(url):
 	try:
@@ -31,7 +30,8 @@ with open(filename) as src:
 	data={}
 	for line in src:
 		line=line.strip()
-		#print(line)
+		if line.startswith('#'):
+			continue
 		if not line:
 			data={}
 		elif '://' in line:
@@ -46,8 +46,9 @@ with open(filename) as src:
 			data['id']=id(data)
 			data['logo']=logo(data)
 			data['group']=group(data)
+			if dopipe: data['url']=pipe(data)
 			print(template.format(**data))
-			r=requests.get('https://raw.githubusercontent.com/quantenschaum/playlists/master/logos/{logo}'.format(**data))
+			r=requests.get(data['logo'])
 			if r.status_code!=200: print('missing {logo}'.format(**data), file=sys.stderr)
 endef
 export SCRIPT
@@ -55,3 +56,6 @@ RUNSCRIPT := python3 -c "$$SCRIPT"
 
 %.m3u: %.src Makefile
 	$(RUNSCRIPT) $< >$@
+
+%.pipe.m3u: %.src Makefile
+	$(RUNSCRIPT) $< pipe >$@
